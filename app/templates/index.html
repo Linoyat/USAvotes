@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Electronic Voting System</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Secure Electronic Voting</h1>
+    </div>
+    <div class="container">
+        <div id="authSection">
+            <h2>Enter Your Voter ID</h2>
+            <form id="authForm">
+                <input type="text" id="voter_id" placeholder="Enter Voter ID" required>
+                <button type="submit">Authenticate</button>
+            </form>
+        </div>
+
+
+        <div id="graphSection" class="hidden">
+            <h2>Graph Verification</h2>
+            <h3>Please verify the following edges:</h3>
+            <div class="graph-images">
+                <div>
+                    <h3>Graph G</h3>
+                    <img src="/static/images/graph_g.png" alt="Graph G" width="300">
+                </div>
+                <div>
+                    <h3>Corresponding Table</h3>
+                    <img src="/static/images/graph_table.png" alt="Graph Table" width="300">
+                </div>
+            </div>
+            <form id="graphForm">
+                <label for="edge1">Edge (a,d):</label>
+                <input type="text" id="edge1" placeholder="Enter vertices" required>
+                <label for="edge2">Edge (a,c):</label>
+                <input type="text" id="edge2" placeholder="Enter vertices" required>
+                <label for="edge3">Edge (b,d):</label>
+                <input type="text" id="edge3" placeholder="Enter vertices" required>
+                <label for="edge4">Edge (b,c):</label>
+                <input type="text" id="edge4" placeholder="Enter vertices" required>
+                <button type="submit">Verify</button>
+            </form>
+        </div>
+        <div id="graphHSection" class="hidden">
+            <h2>Graph H</h2>
+            <img src="/static/images/graph_h.png" alt="Graph H" width="300">
+        </div>
+        
+        
+        <div id="timerSection">
+            <h3>Global Voting Timer: <span id="globalTimer"></span></h3>
+        </div>
+        <div id="stationSection" class="hidden">
+            <h2>Select Your Voting Station</h2>
+            <div class="station-cards">
+                <button class="station-card" data-station="1" onclick="selectStation(1)">Station 1</button>
+                <button class="station-card" data-station="2" onclick="selectStation(2)">Station 2</button>
+                <button class="station-card" data-station="3" onclick="selectStation(3)">Station 3</button>
+            </div>
+        </div>
+
+        <div id="voteSection" class="hidden">
+            <h2>Cast Your Vote</h2>
+            <button onclick="vote('Democrat')">Vote Democrat</button>
+            <button onclick="vote('Republican')">Vote Republican</button>
+        </div>
+
+        <div id="resultsSection" class="hidden">
+            <h2>Voting Results</h2>
+            <table>
+                <tr>
+                    <th>Party</th>
+                    <th>Votes</th>
+                </tr>
+                <tr>
+                    <td>Democrat</td>
+                    <td id="democratVotes">0</td>
+                </tr>
+                <tr>
+                    <td>Republican</td>
+                    <td id="republicanVotes">0</td>
+                </tr>
+                <tr id="winnerRow" class="hidden">
+                    <td colspan="2" id="winnerMessage"></td>
+                </tr>
+                <tr id="tieMessageRow" class="hidden">
+                    <td colspan="2" id="tieMessage">It's a tie! A re-election is required.</td>
+                </tr>
+                <tr id="tieRow" class="hidden">
+                    <td colspan="2">
+                        <button id="resetElectionButton" onclick="resetElection()">New Election</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- חלון אלרט -->
+    <div id="customAlert" class="alert-box" style="display:none;">
+        <h5 class="alert-title">כותרת</h5>
+        <p class="alert-message">הודעה</p>
+        <button class="alert-close btn btn-primary" onclick="closeAlert()">Close</button>
+    </div>
+
+    <!-- חלון אלרט -->
+    <div id="customalert" class="alert-Box" style="display:none;">
+        <h5 class="alert-Title">כותרת</h5>
+        <p class="alert-Message">הודעה</p>
+        <button class="alert-close btn btn-primary" onclick="closeAlerts()">Close</button>
+    </div>
+
+    <script src="/static/js/scripts.js"></script>
+</body>
+
+</html>

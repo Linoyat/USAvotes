@@ -1,0 +1,286 @@
+/* בסיסי */
+body {
+    font-family: 'Arial', sans-serif;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+
+    /* יצירת פסים אדומים ולבנים */
+    background-image: linear-gradient(to bottom, #ffffff 50%, #ff0000 50%);
+    background-size: 100% 40px;
+    /* גובה של כל פס */
+}
+
+.header {
+    background-color: #002868;
+    /* כחול כהה */
+    color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+
+    /* יצירת רקע כחול עם כוכבים לבנים */
+    background-image: radial-gradient(white 10%, transparent 11%),
+        radial-gradient(white 10%, transparent 11%);
+    background-size: 50px 50px;
+    /* גודל הכוכבים */
+    background-position: 0 0, 25px 25px;
+    /* הזזה של השכבה השנייה */
+    background-repeat: repeat;
+    /* חזרה על הכוכבים */
+    width: 100%;
+    /* לכסות את כל הרוחב */
+    height: 100px;
+    /* להתאים לגובה התוכן */
+}
+
+div h1 {
+    margin: 0 auto;
+    /* למרכז את הכותרת */
+    width: 550px;
+    background-color: #002868;
+    /* כחול כהה */
+    color: white;
+    /* טקסט לבן */
+    margin-top: 10px;
+    padding: 10px;
+    /* רווח פנימי */
+    border-radius: 5px;
+    /* פינות עגולות */
+    text-align: center;
+    /* יישור טקסט */
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* הוספת צל למראה מעודן */
+}
+
+.container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    color: #002868;
+
+
+}
+
+/* כפתורים */
+button {
+    padding: 15px 30px;
+    margin: 10px;
+    background-color: #002868;
+    border: none;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #6eb4ff;
+}
+
+/* תחנות */
+.station-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.station-card {
+    background-color: #002868;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 18px;
+}
+
+.station-card:hover {
+    background: #6eb4ff;
+    color: white;
+}
+
+/* טקסטים */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* טופס */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border: 2px solid #007bff;
+}
+
+/* הודעות שגיאה */
+.error-message {
+    color: red;
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#result {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Style the results table */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 12px 20px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+
+/* Style the winner message */
+#winnerRow {
+    background-color: #002868;
+    font-weight: bold;
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.alert-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* צל עבור האלרט */
+    text-align: center;
+    display: none;
+    /* הסתרת האלרט כברירת מחדל */
+}
+
+.alert-box.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+.alert-title {
+    color: #002868;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.alert-message {
+    color: #002868;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.alert-Box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* צל עבור האלרט */
+    text-align: center;
+}
+
+.alert-Box.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+.alert-Title {
+    color: #002868;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.alert-Message {
+    color: #002868;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+
+.graph-images {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.graph-images div {
+    text-align: center;
+}
